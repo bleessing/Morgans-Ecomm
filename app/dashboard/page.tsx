@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { authClient } from "@/app/lib/auth-client";
 
 export default function DashboardPage() {
@@ -38,7 +40,9 @@ export default function DashboardPage() {
     <div className="flex flex-1 items-center justify-center bg-zinc-50 dark:bg-black">
       <div className="w-full max-w-sm space-y-6 p-8 text-center">
         {session.user.image && (
-          <img
+          <Image
+            width={64}
+            height={64}
             src={session.user.image}
             alt="Avatar"
             className="mx-auto h-16 w-16 rounded-full"
